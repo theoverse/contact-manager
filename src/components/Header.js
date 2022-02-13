@@ -1,8 +1,11 @@
 import React from 'react'
 
-const Header = () => {
+const Header = props => {
+    const { branding } = props
     return (
-        <div>Header</div>
+        <div>
+            <h1>{branding}</h1>
+        </div>
     )
 }
 
