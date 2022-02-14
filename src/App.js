@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Contacts from './components/contacts/Contacts'
 import AddContact from './components/contacts/AddContact'
 import Header from './components/layout/Header'
@@ -18,11 +18,11 @@ class App extends Component {
           <div className="App">
             <Header branding="Contact Manager" />
             <div className="container">
-              <Routes>
-                <Route exact path="/" element={<Contacts />} />
-                <Route exact path="/contact/add" element={<AddContact />} />
-                <Route exact path="/about" element={<About />} />
-              </Routes>
+              <Switch>
+                <Route exact path="/" component={Contacts} />
+                <Route exact path="/contact/add" component={AddContact} />
+                <Route exact path="/about" component={About} />
+              </Switch>
             </div>
           </div>
         </Router>
